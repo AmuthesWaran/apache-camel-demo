@@ -1,13 +1,13 @@
-package com.ammu.camelmicroserviceb;
+package com.ammu.simplecamelspringboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CamelMicroserviceBApplication {
+public class SimpleCamelSpringbootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CamelMicroserviceBApplication.class, args);
+		SpringApplication.run(SimpleCamelSpringbootApplication.class, args);
 	}
 
 }
