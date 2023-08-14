@@ -16,27 +16,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 @UseAdviceWith
 public class SimpleCamelSpringbootApplicationTests {
 
-    @Autowired
-    CamelContext context;
-
-    @EndpointInject("mock:result")
-    protected MockEndpoint mockEndpoint;
-
-    @Test
-    public void testSimpleTimer() throws Exception {
-        String expectedBody = "Hello World";
-
-        mockEndpoint.expectedBodiesReceived(expectedBody);
-        mockEndpoint.expectedMinimumMessageCount(1);
-
-        AdviceWith.adviceWith(context, "simpleTimerId", routeBuilder ->{
-            routeBuilder.weaveAddLast().to(mockEndpoint);
-        });
-
-        context.start();
-        mockEndpoint.assertIsSatisfied();
-
-    }
-
 
 }

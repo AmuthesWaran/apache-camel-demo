@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 public class SimpleTimer extends RouteBuilder {
     @Override
     public void configure() throws Exception {
-
+//        https://camel.apache.org/components/3.21.x/timer-component.html
         from("timer:simple-timer?period=2000")
                 .routeId("simpleTimerId")
                 .setBody(constant("Hello World"))
-                .log(LoggingLevel.INFO, "${body}");
+                .log(LoggingLevel.INFO, "${body}, ${routeId}");
 
     }
 }
